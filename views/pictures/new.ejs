@@ -1,0 +1,18 @@
+<%- include ("../partials/header") %>
+    <form class="form-box" action="/pictures" method="POST">
+        <h1>Create a New Picture</h1>
+        <div class="textbox">
+            <input type="text" name="name" placeholder="name">
+        </div>
+        <div class="textbox">
+            <input type="text" name="image" placeholder="image url">
+        </div>
+        <div class="textbox">
+            <input type="text" name="description" placeholder="description">
+        </div>
+
+        <input class="btn-1" type="submit" value="SUBMIT">
+    </form>
+    <a href="/pictures">Go Back</a>
+
+    <%- include ("../partials/footer") %>

@@ -1,0 +1,14 @@
+<%- include ("../partials/header") %>
+
+    <form class="form-box" action="/pictures/<%= picture_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+        <h1>EDIT COMMENT
+        </h1>
+        <div class="textbox">
+            <input class="form-control" type="text" name="comment[text]" value="<%= comment.text %>">
+        </div>
+        <input class="btn-1" type="submit" value="SUBMIT">
+        <a href="/pictures"><input type="button" class="btn-1" value="GO BACK"></a>
+    </form>
+
+
+    <%- include ("../partials/footer") %>

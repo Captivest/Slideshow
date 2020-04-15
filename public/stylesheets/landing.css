@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+body {
+    background-color: black;
+    font-family: "Montserrat";
+}
+
+.landing-header {
+    z-index: 1;
+    text-align: center;
+    position: relative;
+    padding-top: 40vh;
+}
+
+.landing-header h1 {
+    color: aliceblue;
+}
+
+.slideshow {
+    position: fixed;
+    list-style: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 0;
+}
+
+.slideshow li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    z-index: 0;
+    opacity: 0;
+    animation: imageanimation 50s linear infinite;
+}
+
+.slideshow li:nth-child(1) {
+    background-image: url(https://images2.alphacoders.com/564/564835.jpg);
+}
+
+.slideshow li:nth-child(2) {
+    background-image: url(https://images.alphacoders.com/736/736461.png);
+    animation-delay: 10s;
+}
+
+.slideshow li:nth-child(3) {
+    background-image: url(https://images4.alphacoders.com/606/606667.jpg);
+    animation-delay: 20s;
+}
+
+.slideshow li:nth-child(4) {
+    background-image: url(https://images7.alphacoders.com/959/959228.jpg);
+    animation-delay: 30s;
+}
+
+.slideshow li:nth-child(5) {
+    background-image: url(https://images.alphacoders.com/944/944822.jpg);
+    animation-delay: 40s;
+}
+
+@keyframes imageanimation {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    10% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    20% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+}
+
+.no-cssanimations .slideshow li {
+    opacity: 1;
+}
+
+.land-btn {
+    display: inline-block;
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 5px;
+    background: red;
+    text-decoration: none;
+}
+
+.land-btn:hover {
+    transform: scale(1.1);
+    transition: all 0.1s;
+    background: rgb(13, 152, 245);
+    box-shadow: 0 0 25px rgb(19, 224, 231);
+    opacity: 1;
+}
+
+footer {
+    position: absolute;
+    color: aliceblue;
+    z-index: 2;
+    top: 93%;
+}

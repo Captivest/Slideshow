@@ -1,0 +1,21 @@
+<%- include ("../partials/header") %>
+    <form class="form-box" action="/pictures/<%= picture._id %>?_method=PUT" method="POST">
+        <h1>Edit
+            <%= picture.name %>
+        </h1>
+        <div class="textbox">
+            <input type="text" name="picture[name]" value="<%= picture.name %>">
+        </div>
+        <div class="textbox">
+            <input type="text" name="picture[image]" value="<%= picture.image %>">
+        </div>
+        <div class="textbox">
+            <input type="text" name="picture[description]" value="<%= picture.description %>">
+        </div>
+
+        <input class="btn-1" type="submit" value="SUBMIT">
+        <a href="/pictures"><input type="button" class="btn-1" value="GO BACK"></a>
+    </form>
+
+
+    <%- include ("../partials/footer") %>

@@ -1,0 +1,30 @@
+<%- include ("../partials/header") %>
+
+
+
+    <div class="container-1">
+        <div class="container-2">
+            <h1>Welcome To Slideshow!!</h1>
+            <p style="padding-bottom: 30px ;">View our hand-picked pictures from all Animes</p>
+            <a href="/pictures/new" id="butn">Add New Picture</a>
+        </div>
+
+        <div class="container">
+            <% pictures.forEach(function(picture){ %>
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content">
+                            <h2>
+                                <%= picture.name %>
+                            </h2>
+                            <a href="/pictures/<%= picture._id %>" id="butn">More Info</a>
+                        </div>
+                    </div>
+                    <img src="<%= picture.image %>">
+                </div>
+                <% }); %>
+        </div>
+    </div>
+
+
+    <%- include ("../partials/footer") %>

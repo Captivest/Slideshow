@@ -1,0 +1,15 @@
+<%- include ("../partials/header") %>
+
+    <form class="form-box" action="/pictures/<%= picture._id %>/comments" method="POST">
+        <h1>Add New Comment to
+            <%= picture.name %>
+        </h1>
+        <div class="textbox">
+            <input class="form-control" type="text" name="comment[text]" placeholder="text">
+        </div>
+        <input class="btn-1" type="submit" value="SUBMIT">
+        <a href="/pictures"><input type="button" class="btn-1" value="GO BACK"></a>
+    </form>
+
+
+    <%- include ("../partials/footer") %>

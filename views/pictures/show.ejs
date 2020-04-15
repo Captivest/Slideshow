@@ -1,0 +1,51 @@
+<%- include ("../partials/header") %>
+    <div class="container-4">
+        <img class="img-1" src="<%= picture.image %>">
+        <br>
+        <div class="caption">
+            <h2>
+                <%=picture.name%>
+            </h2>
+            <p>
+                <%=picture.description%>
+            </p>
+            <p>
+                <em>Submitted By <%= picture.author.username %></em>
+            </p>
+            <% if(currentUser && picture.author.id.equals(currentUser._id)){ %>
+                <a class="btn-1 " href="/pictures/<%= picture._id %>/edit">Edit</a>
+                <form class="form-1" id="delete-form" action="/pictures/<%= picture._id %>?_method=DELETE" method="POST">
+                    <input type="submit" class="btn-1" value="Delete">
+                </form>
+                <% }%>
+        </div>
+    </div>
+    <div class="container-5">
+        <div class="right">
+            <a class="btn-1" href="/pictures/<%= picture._id %>/comments/new">Add New Comment</a>
+        </div>
+    </div>
+
+    <div class="container-4">
+        <h2>COMMENTS</h2>
+        <% picture.comments.forEach(function(comment){ %>
+            <div class="comment">
+
+                <strong><%= comment.author.username %></strong>
+                <p>
+                    <%= comment.text %>
+                </p>
+                <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                    <a class="btn-1" href="/pictures/<%=picture._id %>/comments/<%=comment._id %>/edit">Edit</a>
+                    <form class="form-1" action="/pictures/<%=picture._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
+                        <input type="submit" class="btn-1" value="Delete">
+                    </form>
+                    <% } %>
+            </div>
+
+
+            <% }) %>
+    </div>
+
+
+    <%- include ("../partials/footer") %>
